@@ -1,3 +1,5 @@
+/*
+
 import 'package:flutter/material.dart';
 
 class StyledText extends StatelessWidget {
@@ -15,3 +17,4 @@ class StyledText extends StatelessWidget {
     );
   }
 }
+*/
