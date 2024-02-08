@@ -15,7 +15,14 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
   //we can simply store a widget also in a variable
   //var activeScreen = const StartScreen();
-  Widget activeScreen = const StartScreen(switchScreen);
+
+  Widget? activeScreen;
+
+  @override
+  void initState() {
+    activeScreen = StartScreen(switchScreen);
+    super.initState();
+  }
 
   //adding a method
   void switchScreen() {
