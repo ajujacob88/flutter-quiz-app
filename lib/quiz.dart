@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/start_screen.dart';
 
 var quizCoverImg = 'assets/images/quiz-logo.png';
 
@@ -13,34 +14,21 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
   @override
   Widget build(context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Image.asset(
-            quizCoverImg,
-            width: 300,
-            color: const Color.fromARGB(150, 255, 255, 255),
-          ),
-          const SizedBox(
-            height: 80,
-          ),
-          const Text(
-            'Learn Flutter the fun way!',
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          OutlinedButton.icon(
-            onPressed: () {},
-            style: OutlinedButton.styleFrom(
-              foregroundColor: Colors.white,
+    return MaterialApp(
+      home: Scaffold(
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 78, 13, 151),
+                Color.fromARGB(255, 107, 15, 168)
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
-            icon: const Icon(Icons.arrow_right_alt),
-            label: const Text('Start Quiz'),
           ),
-        ],
+          child: const StartScreen(),
+        ),
       ),
     );
   }
