@@ -13,13 +13,19 @@ class StartScreen extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Opacity(
-            opacity: 0.5,
-            child: Image.asset(
-              quizCoverImg,
-              width: 300,
-            ),
-          ),
+          Image.asset(
+            quizCoverImg,
+            width: 300,
+            color: const Color.fromARGB(159, 255, 255, 255),
+          ), //applied transparency here in color transparency
+
+          // Opacity(
+          //   opacity: 0.5,
+          //   child: Image.asset(
+          //     quizCoverImg,
+          //     width: 300,
+          //   ),
+          // ),
           const SizedBox(
             height: 80,
           ),
