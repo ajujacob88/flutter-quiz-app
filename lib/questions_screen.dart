@@ -12,9 +12,10 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(context) {
-    return Center(
+    return SizedBox(
+      width: double.infinity,
       child: Column(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text('The question..'),
           const SizedBox(height: 30),
