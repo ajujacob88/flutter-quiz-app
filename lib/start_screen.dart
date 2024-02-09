@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-//import 'package:quiz_app/quiz.dart';
-
-//import 'package:quiz_app/styled_text.dart';
 
 var quizCoverImg = 'assets/images/quiz-logo.png';
-// void startQuiz() {}
 
 class StartScreen extends StatelessWidget {
   const StartScreen(this.startQuiz, {super.key});
