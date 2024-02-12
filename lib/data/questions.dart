@@ -1,5 +1,6 @@
 import 'package:quiz_app/models/quiz_question.dart';
 
+//Here it is arranged in such a way that the first options are the answer to each question.. In the screen, we need to shuffle the options
 const questions = [
   QuizQuestion(
     'What are the main building blocks of Flutter UIs?',
