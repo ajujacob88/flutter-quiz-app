@@ -15,6 +15,7 @@ const questions = [
     'By combining widgets in a visual editor',
     'By defining widgets in config files',
     'By using XCode for iOS and Android Studio for Android',
+    'None of the above',
   ]),
   QuizQuestion(
     'What\'s the purpose of a StatefulWidget?',
