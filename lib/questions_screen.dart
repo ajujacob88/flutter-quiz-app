@@ -28,7 +28,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
           AnswerButton(answerText: 'Answer 1', onTap: () {}),
           AnswerButton(answerText: 'Answer 2', onTap: () {}),
           AnswerButton(answerText: 'Answer 3', onTap: () {}),
-          AnswerButton(answerText: 'Answer 44', onTap: () {}),
+          AnswerButton(answerText: 'Answer 4', onTap: () {}),
         ],
       ),
     );
