@@ -12,9 +12,20 @@ class QuestionsScreen extends StatefulWidget {
 }
 
 class _QuestionsScreenState extends State<QuestionsScreen> {
+  var currentQuestionIndex = 0;
+
+  void answerQuestion() {
+    //currentQuestionIndex += 1;
+    //currentQuestionIndex++;
+    //put the currentQuestionIndex++ inside the setstate, then only build method will be executed again..The setstate method provided by the flutter inorder to tell flutter that the build method hould be executed again
+    setState(() {
+      currentQuestionIndex++;
+    });
+  }
+
   @override
   Widget build(context) {
-    final currentQuestion = questions[0];
+    final currentQuestion = questions[currentQuestionIndex];
 
     return SizedBox(
       width: double.infinity,
@@ -33,7 +44,10 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             ),
             const SizedBox(height: 30),
             ...currentQuestion.getShuffledAnswers().map((item) {
-              return AnswerButton(answerText: item, onTap: () {});
+              return AnswerButton(
+                answerText: item,
+                onTap: answerQuestion,
+              );
             }),
           ],
         ),
