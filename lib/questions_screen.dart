@@ -5,8 +5,9 @@ import 'package:quiz_app/data/questions.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({super.key});
+  const QuestionsScreen({super.key, required this.onSelectAnswer});
 
+  final void Function(String answer) onSelectAnswer;
   @override
   State<QuestionsScreen> createState() {
     return _QuestionsScreenState();
@@ -16,10 +17,10 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   var currentQuestionIndex = 0;
 
-  void answerQuestion() {
-    //currentQuestionIndex += 1;
-    //currentQuestionIndex++;
-    //put the currentQuestionIndex++ inside the setstate, then only build method will be executed again..The setstate method provided by the flutter inorder to tell flutter that the build method hould be executed again
+  void answerQuestion(String selectedAnswer) {
+    //flutter provide widget to access functios in the widget class to the state class
+    widget.onSelectAnswer(selectedAnswer);
+
     setState(() {
       currentQuestionIndex++;
     });
@@ -46,10 +47,12 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 30),
-            ...currentQuestion.getShuffledAnswers().map((item) {
+            ...currentQuestion.getShuffledAnswers().map((answer) {
               return AnswerButton(
-                answerText: item,
-                onTap: answerQuestion,
+                answerText: answer,
+                onTap: () {
+                  answerQuestion(answer);
+                },
               );
             }),
           ],

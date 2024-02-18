@@ -13,25 +13,7 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  //we can simply store a widget also in a variable
-  //var activeScreen = const StartScreen();
-
-  // Widget? activeScreen;
-
-  // @override
-  // void initState() {
-  //   activeScreen = StartScreen(switchScreen);
-  //   super.initState();
-  // }
-
-  //   //adding a method
-  // void switchScreen() {
-  //   setState(() {
-  //     activeScreen = const QuestionsScreen();
-  //   });
-  // }
-
-  //alternate way
+  final List<String> selectedAnswers = [];
   var activeScreen = 'start-screen';
 
   //adding a method
@@ -39,6 +21,11 @@ class _QuizState extends State<Quiz> {
     setState(() {
       activeScreen = 'questions-screen';
     });
+  }
+
+  void chooseAnswer(String answer) {
+    selectedAnswers.add(answer);
+    //print('printing,$selectedAnswers');
   }
 
   @override
@@ -58,7 +45,9 @@ class _QuizState extends State<Quiz> {
           ),
           child: activeScreen == 'start-screen'
               ? StartScreen(switchScreen)
-              : const QuestionsScreen(), //using ternary expression
+              : QuestionsScreen(
+                  onSelectAnswer: chooseAnswer,
+                ), //using ternary expression
         ),
       ),
     );
