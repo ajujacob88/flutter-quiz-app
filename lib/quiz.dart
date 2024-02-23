@@ -14,12 +14,14 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  final List<String> selectedAnswers = [];
+  List<String> selectedAnswers = [];
   var activeScreen = 'start-screen';
 
   //adding a method
   void switchScreen() {
     setState(() {
+      selectedAnswers =
+          []; //inorder to reset the list if all the answers are marked
       activeScreen = 'questions-screen';
     });
   }
